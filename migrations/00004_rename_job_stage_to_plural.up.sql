@@ -1,0 +1,1 @@
+alter table api.job_stage rename to job_stages;
