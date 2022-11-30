@@ -1,8 +1,9 @@
-DATABASE_URL = "postgres://thang:password@localhost:5432/job_tracking?sslmode=disable&search_path=api"
 N=
 
-.PHONY: *
+include .env.*
 
+.PHONY: *
+		
 migrate-new:
 	migrate create -ext sql -dir migrations -seq -digits 5 ${name}
 migrate-drop:
@@ -16,4 +17,5 @@ migrate-down:
 reload-schema:
 	killall -SIGUSR1 postgrest
 start-dev:
-	postgrest ./postgrest.conf 
+# any overriden variable need to be explicitly set
+	PGRST_DB_URI=${PGRST_DB_URI} postgrest ./postgrest.conf 
