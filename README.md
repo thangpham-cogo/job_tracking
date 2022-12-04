@@ -16,7 +16,7 @@ npm run migrate create <name>
 # dry run to see the sql that will be executed in a transaction
 npm run migrate-dry up/down
 
-# display manual for node-pg-migrate 
+# display manual for node-pg-migrate
 npx node-pg-migrate
 
 # connect to db via psql (CLI)

@@ -7,8 +7,8 @@
     "node": "v18.12.1"
   },
   "scripts": {
-    "migrate": "ts-node node_modules/.bin/node-pg-migrate -j ts -f config/default.json",
-    "migrate-dry": "ts-node node_modules/.bin/node-pg-migrate -j ts -f config/default.json --dry-run",
+    "migrate": "ts-node node_modules/.bin/node-pg-migrate up -j ts -f config/default.json",
+    "migrate-dry": "ts-node node_modules/.bin/node-pg-migrate up -j ts -f config/default.json --dry-run",
     "db-create": "docker-compose -f docker-compose.yml up -d",
     "db-destroy": "docker-compose -f docker-compose.yml down --volumes"
   },
