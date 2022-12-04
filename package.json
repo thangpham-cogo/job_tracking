@@ -1,0 +1,42 @@
+{
+  "name": "job_tracking",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "engines": {
+    "node": "v18.12.1"
+  },
+  "scripts": {
+    "migrate": "ts-node node_modules/.bin/node-pg-migrate -j ts -f config/default.json",
+    "migrate-dry": "ts-node node_modules/.bin/node-pg-migrate -j ts -f config/default.json --dry-run",
+    "db-create": "docker-compose -f docker-compose.yml up -d",
+    "db-destroy": "docker-compose -f docker-compose.yml down --volumes"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thangpham-cogo/job_tracking.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thangpham-cogo/job_tracking/issues"
+  },
+  "homepage": "https://github.com/thangpham-cogo/job_tracking#readme",
+  "dependencies": {
+    "config": "^3.3.8",
+    "node-pg-migrate": "^6.2.2",
+    "pg": "^8.8.0",
+    "slonik": "^33.0.4"
+  },
+  "devDependencies": {
+    "@types/config": "^3.3.0",
+    "@types/node": "^18.11.10",
+    "@types/pg": "^8.6.5",
+    "@typescript-eslint/eslint-plugin": "^5.45.0",
+    "@typescript-eslint/parser": "^5.45.0",
+    "prettier": "^2.8.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.3"
+  }
+}
