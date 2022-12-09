@@ -8,9 +8,12 @@ services:
       - POSTGRES_PASSWORD=postgres
     ports:
       - '5432:5432'
-    volumes: 
+    volumes:
       - job_tracking_db:/var/lib/postgresql/data
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
+volumes:
+  job_tracking_db:
 
 volumes:
   job_tracking_db:
